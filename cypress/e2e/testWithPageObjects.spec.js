@@ -7,7 +7,7 @@ import { onSmartTablePage } from "../support/page_objects/smartTablePage"
 describe('Test with Page Objects', () => {
 
     beforeEach('open application', () => {
-        cy.openHomePage()
+        cy.openHomePage() //this is instead of cy.visit('/) that is replaced by this custom command in the `commands.js` file
     })
 
     it('verify navigations actoss the pages', () => {
@@ -17,9 +17,9 @@ describe('Test with Page Objects', () => {
         navigateTo.tooltipPage()
         navigateTo.toasterPage()
     })
-    
 
-    it(' should submit Inline and Basic form and select tomorrow date in the calendar', {browser: ['!firefox', '!edge']}, () => {
+
+    it(' should submit Inline and Basic form and select tomorrow date in the calendar', { browser: ['!firefox', '!edge'] }, () => {
         navigateTo.formLayoutsPage()
         onFormLayoutsPage.submitInlineFormWithNameAndEmail('Artem', 'test@test.com')
         onFormLayoutsPage.submitBasicFormWithEmailAndPassword('test@test.com', 'password')

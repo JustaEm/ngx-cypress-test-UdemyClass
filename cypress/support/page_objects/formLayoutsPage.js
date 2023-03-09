@@ -6,8 +6,7 @@ export class FormLayoutsPage{
             cy.wrap(form).find('[placeholder="Jane Doe"]').type(name)
             cy.wrap(form).find('[placeholder="Email"]').type(email)
             cy.wrap(form).find('[type="checkbox"]').check({force: true})
-            cy.wrap(form).submit()
-        })
+            cy.wrap(form).submit() //.submit() method is only for html elements with tag: html <form _ngcontent...         })
     }
 
     submitBasicFormWithEmailAndPassword(email, password){
